@@ -50,7 +50,11 @@ async function connectToDevice() {
             // acceptAllDevices: true
         });
 
-        console.log("requestDevice finished");
+        console.log('requestDevice finished, device selected:', device.name);
+        bleStateContainer.innerHTML = 'Connected to device ' + device.name;
+        bleStateContainer.style.color = "#24af37";
+        device.addEventListener('gattservicedisconnected', onDisconnected);
+
         // Add an event listener to detect when a device disconnects
         // device.addEventListener("gattserverdisconnected", onDisconnected);
 
