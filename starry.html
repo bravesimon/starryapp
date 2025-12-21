@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starry Ceiling APP</title>
+    <link rel="stylesheet" href="radio_button_slider.css">
+
+ </head>
+
+<body>
+
+    <div class="topnav">
+      <h1>Starry Ceiling APP</h1>
+    </div>
+
+    <div class="card">
+        <p>
+            <button id="connectBleButton" class="connectButton"> Connect to BLE Device</button>
+            <button id="disconnectBleButton" class="disconnectButton"> Disconnect BLE Device</button>
+        </p>
+        <p class="gray-label">
+          BLE state: <strong><span id="bleState" style="color:#d13a30;">Disconnected</span></strong>
+        </p>
+    </div>
+
+            
+    <form class="form">
+      
+      <h2>LEDS</h2>
+      <div class="switch-field">
+        <input type="radio" id="radio-1" name="switch-1" value="L0" checked/>
+        <label for="radio-1">Leds off</label>
+
+        <input type="radio" id="radio-2" name="switch-1" value="L1"/>
+        <label for="radio-2">LED1</label>
+
+        <input type="radio" id="radio-3" name="switch-1" value="L2"/>
+        <label for="radio-3">LED2</label>
+        
+        <input type="radio" id="radio-4" name="switch-1" value="L3"/>
+        <label for="radio-4">LEDS ON</label>
+      </div>
+
+      <h2>Colors</h2>
+      <div class="switch-field">
+        <input type="radio" id="radio-5" name="switch-2" value="C0" checked/>
+        <label for="radio-5" style="color: white;">1.</label>
+
+        <input type="radio" id="radio-6" name="switch-2" value="C1"/>
+        <label for="radio-6" style="color: cyan;">2.</label>
+
+        <input type="radio" id="radio-7" name="switch-2" value="C2"/>
+        <label for="radio-7" style="color: blue;">3.</label>
+        
+        <input type="radio" id="radio-8" name="switch-2" value="C3"/>
+        <label for="radio-8" style="color: purple;">4.</label>
+
+        <input type="radio" id="radio-9" name="switch-2" value="C4"/>
+        <label for="radio-9" style="color: red;">5.</label>
+
+        <input type="radio" id="radio-10" name="switch-2" value="C5"/>
+        <label for="radio-10" style="color: yellow;">6.</label>
+
+        <input type="radio" id="radio-11" name="switch-2" value="C6"/>
+        <label for="radio-11" style="color: green;">7.</label>
+      </div>
+
+
+      <h2>Brightness</h2>
+      <div class="switch-field">
+        <input type="radio" id="radio-12" name="switch-3" value="B0"/>
+        <label for="radio-12">0%</label>
+        
+        <input type="radio" id="radio-13" name="switch-3" value="B1" />
+        <label for="radio-13">25%</label>
+
+        <input type="radio" id="radio-14" name="switch-3" value="B2" />
+        <label for="radio-14">50%</label>
+
+        <input type="radio" id="radio-15" name="switch-3" value="B3" />
+        <label for="radio-15">75%</label>
+
+        <input type="radio" id="radio-16" name="switch-3" value="B4" checked/>
+        <label for="radio-16">100%</label>
+      </div>
+
+
+      <h2>Blink</h2>
+      <div class="switch-field">
+        <input type="radio" id="radio-31" name="switch-4" value="B0" checked/>
+        <label for="radio-31">0</label>
+        
+        <input type="radio" id="radio-32" name="switch-4" value="B1" />
+        <label for="radio-32">1</label>
+
+        <input type="radio" id="radio-33" name="switch-4" value="B2" />
+        <label for="radio-33">2</label>
+
+        <input type="radio" id="radio-34" name="switch-4" value="B3" />
+        <label for="radio-34">3</label>
+
+        <input type="radio" id="radio-35" name="switch-4" value="B4" />
+        <label for="radio-35">4</label>
+      </div>
+
+
+      <h2>Rainbow</h2>
+      <div class="switch-field">
+        <input type="radio" id="radio-41" name="switch-two" value="R0" checked/>
+        <label for="radio-41">0</label>
+        
+        <input type="radio" id="radio-42" name="switch-two" value="R1" />
+        <label for="radio-42">1</label>
+
+        <input type="radio" id="radio-43" name="switch-two" value="R2" />
+        <label for="radio-43">2</label>
+
+        <input type="radio" id="radio-44" name="switch-two" value="R3" />
+        <label for="radio-44">3</label>
+
+        <input type="radio" id="radio-45" name="switch-two" value="R4" />
+        <label for="radio-45">4</label>
+      </div>
+    </form>
+
+
+    <script src="BLE_helper.js"></script>
+
+</body>
+</html>
