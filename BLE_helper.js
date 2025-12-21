@@ -53,10 +53,8 @@ async function connectToDevice() {
         console.log('requestDevice finished, device selected:', device.name);
         bleStateContainer.innerHTML = 'Connected to device ' + device.name;
         bleStateContainer.style.color = "#24af37";
-        device.addEventListener('gattservicedisconnected', onDisconnected);
-
         // Add an event listener to detect when a device disconnects
-        // device.addEventListener("gattserverdisconnected", onDisconnected);
+        device.addEventListener('gattservicedisconnected', onDisconnected);
 
         // Try to connect to the remote GATT Server running on the Bluetooth device
         const server = await device.gatt.connect();
@@ -69,7 +67,7 @@ async function connectToDevice() {
         bleServiceFound = service;
 
         // Get the characteristic from the Bluetooth device
-        const characteristic = await service.getCharacteristic("0000ffe1-0000-1000-8000-00805f9b34fb");
+        const characteristic = await service.getCharacteristic(bleCharacteristic);
         console.log("got charachteristic");
         sensorCharacteristicFound = characteristic;
 
