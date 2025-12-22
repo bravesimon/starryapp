@@ -12,7 +12,6 @@ const timestampContainer = document.getElementById('timestamp');
 var bleService =        '0000ffe0-0000-1000-8000-00805f9b34fb';
 var bleCharacteristic = '0000ffe1-0000-1000-8000-00805f9b34fb';
 
-
 //Global Variables to Handle Bluetooth
 var bleServer;
 var bleServiceFound;
@@ -88,7 +87,8 @@ function writeOnCharacteristic(value){
         bleServiceFound.getCharacteristic(bleCharacteristic)
         .then(characteristic => {
             // console.log("Found the LED characteristic: ", characteristic.uuid);
-            const data = new Uint8Array([value]);
+            const data = Uint8Array.from(value.split("").map(x => x.charCodeAt()));
+            // console.log("writeOnCharacteristic u8array data:", data); // only for debuging
             return characteristic.writeValue(data);
         })
         .catch(error => {
@@ -133,8 +133,7 @@ const radios = document.querySelectorAll('input');
 
 radios.forEach(radio => {
 radio.addEventListener('change', () => {
-        console.log(`Sent: ${radio.value}`);
-
+        console.log(`Sending: ${radio.value}`);
         writeOnCharacteristic(radio.value);
     });
 });
